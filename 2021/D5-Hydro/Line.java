@@ -41,8 +41,34 @@ public class Line {
         return max;
     }
 
-    public void draw(int[][] board, Line line)
+    public static void draw(int[][] board, Line line) throws Exception
     {
+        if (line.getP1().getX() == line.getP2().getX()) //same x
+        {
+            if (line.getP1().getY() <= line.getP2().getY())
+            {
+                for (int i = line.getP1().getY() ; i <= line.getP2().getY() ; i++)
+                    board[line.getP1().getX()][i]++;
+            }
+            else
+            {
+                for (int i = line.getP2().getY() ; i <= line.getP1().getY() ; i++)
+                    board[line.getP1().getX()][i]++;
+            }
+        }
+        else if (line.getP1().getY() == line.getP2().getY())
+        {
+            if (line.getP1().getX() <= line.getP2().getX())
+            {
+                for (int i = line.getP1().getX() ; i <= line.getP2().getX() ; i++)
+                    board[i][line.getP1().getY()]++;
+            }
+            else
+            {
+                for (int i = line.getP2().getX() ; i <= line.getP1().getX() ; i++)
+                    board[i][line.getP1().getY()]++;
+            }
         
+        }
     }
 }

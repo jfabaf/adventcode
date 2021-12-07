@@ -17,4 +17,12 @@ public class Point {
         return y;
     }
 
+    public int getMaxXY()
+    {
+        if (x > y)
+            return x;
+        else
+            return y;
+    }
+
 }
