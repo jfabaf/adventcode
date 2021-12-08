@@ -70,5 +70,31 @@ public class Line {
             }
         
         }
+        else
+        {
+            Point p1,p2;
+            int incX,incY = 1;
+            if (line.getP1().getY() < line.getP2().getY())
+            {
+                p1 = line.getP1();
+                p2 = line.getP2();
+            }
+            else
+            {
+                p1 = line.getP2();
+                p2 = line.getP1();
+            }
+
+            //p1.y < p2.y  / or \
+            if (p2.getX() < p1.getX())
+                incX = -1;
+            else
+                incX = 1;
+
+            int x,y;
+            for (x = p1.getX(),y = p1.getY() ; ((incX == -1 && x >= p2.getX()) || (incX == 1 && x <= p2.getX())) && y <= p2.getY(); x += incX,y++ )
+                    board[x][y]++;
+
+        }
     }
 }

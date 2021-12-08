@@ -19,7 +19,7 @@ class Prueba2 {
     public static void main(String[] args) throws Exception 
     {
         // Open the file
-        FileInputStream fstream = new FileInputStream("input.txt");
+        FileInputStream fstream = new FileInputStream("inputTest.txt");
         BufferedReader  br = new BufferedReader(new InputStreamReader(fstream));
         ArrayList<Line> lines = new ArrayList<>();
         int x1,y1,x2,y2;
